@@ -9,8 +9,15 @@ return {
   {
     "LazyVim/LazyVim",
     opts = {
+      -- colorscheme = "catppuccin",
       colorscheme = "nord",
+      -- colorscheme = "tokyonight",
     },
+  },
+
+  {
+    "folke/tokyonight.nvim",
+    opts = { style = "storm" },
   },
 
   -- noice.nvim
