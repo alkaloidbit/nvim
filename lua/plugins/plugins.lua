@@ -259,4 +259,5 @@ return {
     },
   },
   { "nelsyeung/twig.vim" },
+  { "phpactor/phpactor" },
 }
