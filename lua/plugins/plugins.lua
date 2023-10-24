@@ -5,6 +5,8 @@ return {
     url = "git@github.com:alkaloidbit/nord.nvim",
     branch = "localchanges",
   },
+  -- fzf
+  { "junegunn/fzf", build = "./install --bin" },
   -- Configure LazyVim to load nord
   {
     "LazyVim/LazyVim",
@@ -66,6 +68,9 @@ return {
         phpactor = {},
         intelephense = {},
         pyright = {},
+      },
+      inlay_hints = {
+        enabled = true,
       },
     },
   },
