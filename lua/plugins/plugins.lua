@@ -5,8 +5,9 @@ return {
     url = "git@github.com:alkaloidbit/nord.nvim",
     branch = "localchanges",
   },
-  -- fzf
+
   { "junegunn/fzf", build = "./install --bin" },
+
   -- Configure LazyVim to load nord
   {
     "LazyVim/LazyVim",
@@ -17,23 +18,23 @@ return {
     },
   },
 
+  -- tokyonight
   {
     "folke/tokyonight.nvim",
     opts = { style = "storm" },
   },
 
-  -- noice.nvim
   { "folke/noice.nvim", opts = { lsp = { progress = { enabled = false } } } },
 
   { "b0o/incline.nvim", opts = {} },
 
+  -- inc-rename
   {
     "smjonas/inc-rename.nvim",
     cmd = "IncRename",
     config = true,
   },
 
-  -- zen-mode
   { "folke/zen-mode.nvim", opts = {} },
 
   -- fidget
