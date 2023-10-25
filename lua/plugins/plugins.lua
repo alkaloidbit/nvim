@@ -25,6 +25,14 @@ return {
   -- noice.nvim
   { "folke/noice.nvim", opts = { lsp = { progress = { enabled = false } } } },
 
+  { "b0o/incline.nvim", opts = {} },
+
+  {
+    "smjonas/inc-rename.nvim",
+    cmd = "IncRename",
+    config = true,
+  },
+
   -- zen-mode
   { "folke/zen-mode.nvim", opts = {} },
 

@@ -31,6 +31,8 @@ keymap(
   { desc = "Files in current buf Dir", noremap = true, silent = true }
 )
 
+keymap("n", "<leader>rn", ":IncRename", { desc = "Inc Rename", noremap = true, silent = true })
+
 keymap(
   "n",
   "<leader>z",
