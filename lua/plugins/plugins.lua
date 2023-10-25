@@ -25,6 +25,9 @@ return {
   -- noice.nvim
   { "folke/noice.nvim", opts = { lsp = { progress = { enabled = false } } } },
 
+  -- zen-mode
+  { "folke/zen-mode.nvim", opts = {} },
+
   -- fidget
   {
     "j-hui/fidget.nvim",

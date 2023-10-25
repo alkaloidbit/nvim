@@ -30,3 +30,10 @@ keymap(
   "<cmd>lua require('telescope.builtin').find_files({cwd=vim.fn.expand('%:p:h'), prompt_title=' Files in Current Buffer Dir '})<CR>",
   { desc = "Files in current buf Dir", noremap = true, silent = true }
 )
+
+keymap(
+  "n",
+  "<leader>z",
+  "<cmd>lua require('zen-mode').toggle({ window = { width = .85 } })<CR>",
+  { desc = "Zen Mode", noremap = true, silent = false }
+)
