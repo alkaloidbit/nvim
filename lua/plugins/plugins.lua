@@ -26,7 +26,7 @@ return {
 
   { "folke/noice.nvim", opts = { lsp = { progress = { enabled = false } } } },
 
-  { "b0o/incline.nvim", opts = {} },
+  -- { "b0o/incline.nvim", opts = {} },
 
   -- inc-rename
   {
@@ -288,4 +288,10 @@ return {
   },
   { "nelsyeung/twig.vim" },
   { "phpactor/phpactor" },
+  {
+    "Bekaboo/dropbar.nvim",
+    dependencies = {
+      "nvim-telescope/telescope-fzf-native.nvim",
+    },
+  },
 }
