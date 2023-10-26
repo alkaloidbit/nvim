@@ -36,7 +36,18 @@ return {
   },
 
   { "folke/zen-mode.nvim", opts = {} },
-
+  { "folke/twilight.nvim", opts = {} },
+  { "andymass/vim-matchup", opts = {} },
+  {
+    "ThePrimeagen/refactoring.nvim",
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+      "nvim-treesitter/nvim-treesitter",
+    },
+    config = function()
+      require("refactoring").setup()
+    end,
+  },
   -- fidget
   {
     "j-hui/fidget.nvim",
