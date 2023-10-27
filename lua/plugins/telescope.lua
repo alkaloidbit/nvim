@@ -137,7 +137,7 @@ return {
       {
         "<leader>co",
         "<cmd>Telescope aerial<cr>",
-        desc = "Code Outline",
+        desc = "Goto Symbol (Aerial)",
       },
       { "<localleader>r", "<cmd>Telescope resume initial_mode=normal<CR>", desc = "Resume last" },
       { "<localleader>R", "<cmd>Telescope pickers<CR>", desc = "Pickers" },

@@ -294,4 +294,50 @@ return {
       "nvim-telescope/telescope-fzf-native.nvim",
     },
   },
+
+  -- { "echasnovski/mini.indentscope", enabled = false },
+  -- indent-blankline
+  {
+    "lukas-reineke/indent-blankline.nvim",
+    event = "LazyFile",
+    opts = {
+      indent = {
+        char = "│",
+        tab_char = "│",
+      },
+      exclude = {
+        filetypes = {
+          "help",
+          "alpha",
+          "dashboard",
+          "neo-tree",
+          "Trouble",
+          "trouble",
+          "lazy",
+          "mason",
+          "notify",
+          "toggleterm",
+          "lazyterm",
+        },
+      },
+      scope = { enabled = true },
+    },
+    keys = {
+      { "<Leader>ub", "<cmd>IBLToggle<CR>" },
+    },
+  },
+
+  -- cmp-rg
+  {
+    "lukas-reineke/cmp-rg",
+  },
+  -- override nvim-cmp and add cmp-rg
+  {
+    "hrsh7th/nvim-cmp",
+    dependencies = { "lukas-reineke/cmp-rg" },
+    ---@param opts cmp.ConfigSchema
+    opts = function(_, opts)
+      table.insert(opts.sources, { name = "rg" })
+    end,
+  },
 }

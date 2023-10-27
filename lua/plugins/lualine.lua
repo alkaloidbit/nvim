@@ -1,9 +1,5 @@
 return {
   {
-    "arkav/lualine-lsp-progress",
-  },
-
-  {
     "nvim-lualine/lualine.nvim",
     opts = {
       options = {
