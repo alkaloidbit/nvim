@@ -301,6 +301,7 @@ return {
     "lukas-reineke/indent-blankline.nvim",
     event = "LazyFile",
     opts = {
+      enabled = false,
       indent = {
         char = "│",
         tab_char = "│",
