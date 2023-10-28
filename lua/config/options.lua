@@ -3,14 +3,14 @@
 -- Add any additional options here
 local opt = vim.opt
 
--- opt.foldlevel = 99
--- opt.foldlevelstart = 99
--- opt.fillchars = [[eob: ,fold: ,foldopen:,foldsep: ,foldclose:]]
--- opt.foldcolumn = "1"
--- opt.foldenable = true
--- opt.foldmethod = "indent"
+opt.foldlevel = 99
+opt.foldlevelstart = 99
+opt.fillchars = [[eob: ,fold: ,foldopen:,foldsep: ,foldclose:]]
+opt.foldcolumn = "1"
+opt.foldenable = true
+opt.foldmethod = "indent"
 
--- opt.laststatus = 3 -- global statusline
+opt.laststatus = 3 -- global statusline
 
 opt.colorcolumn = ""
 
