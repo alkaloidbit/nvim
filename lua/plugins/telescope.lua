@@ -135,7 +135,7 @@ return {
     },
     keys = {
       {
-        "<leader>co",
+        "<leader>cg",
         "<cmd>Telescope aerial<cr>",
         desc = "Goto Symbol (Aerial)",
       },

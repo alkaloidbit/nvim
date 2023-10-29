@@ -342,4 +342,9 @@ return {
       table.insert(opts.sources, { name = "rg" })
     end,
   },
+  -- mason-null-ls
+  {
+    "jay-babu/mason-null-ls.nvim",
+    opts = { ensure_installed = nil, automatic_installation = true, automatic_setup = false },
+  },
 }

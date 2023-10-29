@@ -3,6 +3,7 @@
 -- Add any additional keymaps here
 
 local keymap = vim.api.nvim_set_keymap
+local map = vim.keymap.set
 local default_opts = { noremap = true, silent = true }
 local expr_opts = { noremap = true, expr = true, silent = true }
 
@@ -16,6 +17,15 @@ keymap("n", "msgg", ":messages clear<CR>", default_opts)
 -- center result
 keymap("n", "msg", ":messages <CR>", default_opts)
 keymap("n", "msgg", ":messages clear<CR>", default_opts)
+
+-- Toggle fold or select option from popup menu
+---@return string
+map("n", "<CR>", function()
+  return vim.fn.pumvisible() == 1 and "<CR>" or "za"
+end, { expr = true, desc = "Toggle Fold" })
+
+-- Focus the current fold by closing all others
+map("n", "<S-Return>", "zMzv", { remap = true, desc = "Focus Fold" })
 
 keymap(
   "n",
