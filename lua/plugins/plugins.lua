@@ -347,4 +347,22 @@ return {
     "jay-babu/mason-null-ls.nvim",
     opts = { ensure_installed = nil, automatic_installation = true, automatic_setup = false },
   },
+
+  {
+    "mickael-menu/zk-nvim",
+    name = "zk",
+    ft = "markdown",
+    cmd = { "ZkNew", "ZkNotes", "ZkTags", "ZkMatch" },
+		-- stylua: ignore
+		keys = {
+			{ '<leader>zn', "<Cmd>ZkNew { title = vim.fn.input('Title: ') }<CR>", desc = 'Zk New' },
+			{ '<leader>zo', "<Cmd>ZkNotes { sort = { 'modified' } }<CR>", desc = 'Zk Notes' },
+			{ '<leader>zt', '<Cmd>ZkTags<CR>', desc = 'Zk Tags' },
+			{ '<leader>zf', "<Cmd>ZkNotes { sort = { 'modified' }, match = vim.fn.input('Search: ') }<CR>", desc = 'Zk Search' },
+			{ '<leader>zf', ":'<,'>ZkMatch<CR>", mode = 'x', desc = 'Zk Match' },
+			{ '<leader>zb', '<Cmd>ZkBacklinks<CR>', desc = 'Zk Backlinks' },
+			{ '<leader>zl', '<Cmd>ZkLinks<CR>', desc = 'Zk Links' },
+		},
+    opts = { picker = "telescope" },
+  },
 }

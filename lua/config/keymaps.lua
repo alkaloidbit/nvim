@@ -45,7 +45,7 @@ keymap("n", "<leader>rn", ":IncRename", { desc = "Inc Rename", noremap = true, s
 
 keymap(
   "n",
-  "<leader>z",
+  "<leader>zm",
   "<cmd>lua require('zen-mode').toggle({ window = { width = .85 } })<CR>",
   { desc = "Zen Mode", noremap = true, silent = false }
 )
