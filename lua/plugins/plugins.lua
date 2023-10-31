@@ -365,4 +365,9 @@ return {
 		},
     opts = { picker = "telescope" },
   },
+  {
+    "nvim-focus/focus.nvim",
+    version = false,
+    config = true,
+  },
 }

@@ -32,19 +32,6 @@ end
 
 return {
   {
-    "neovim/nvim-lspconfig",
-    opts = {
-      capabilities = {
-        textDocument = {
-          foldingRange = {
-            dynamicRegistration = false,
-            lineFoldingOnly = true,
-          },
-        },
-      },
-    },
-  },
-  {
     "kevinhwang91/nvim-ufo",
     -- enabled = false,
     event = { "BufReadPost", "BufNewFile" },
@@ -115,7 +102,13 @@ return {
       },
     },
     opts = {
+      -- Option 3: treesitter as a main provider instead
+      -- Only depend on `nvim-treesitter/queries/filetype/folds.scm`,
+      -- performance and stability are better than `foldmethod=nvim_treesitter#foldexpr()`
       fold_virt_text_handler = handler,
+      provider_selector = function(bufnr, filetype, buftype)
+        return { "treesitter", "indent" }
+      end,
     },
     config = function(_, opts)
       require("ufo").setup(opts)

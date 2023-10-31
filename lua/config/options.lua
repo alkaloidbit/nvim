@@ -3,15 +3,15 @@
 -- Add any additional options here
 local opt = vim.opt
 
-opt.foldlevel = 99
+opt.foldcolumn = "1" -- '0' is not bad
+opt.foldlevel = 99 -- Using ufo provider need a large value, feel free to decrease the value
 opt.foldlevelstart = 99
-opt.fillchars = [[eob: ,fold: ,foldopen:,foldsep: ,foldclose:]]
-opt.foldcolumn = "1"
 opt.foldenable = true
+
+opt.fillchars = [[eob: ,fold: ,foldopen:,foldsep: ,foldclose:]]
 opt.foldmethod = "indent"
 
 opt.laststatus = 3 -- global statusline
-
 opt.colorcolumn = ""
 
 vim.g.nord_contrast = false
