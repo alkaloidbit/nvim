@@ -6,6 +6,7 @@ return {
     branch = "localchanges",
   },
 
+  { "RRethy/nvim-treesitter-endwise" },
   { "junegunn/fzf", build = "./install --bin" },
 
   -- Configure LazyVim to load nord
@@ -15,6 +16,40 @@ return {
       -- colorscheme = "catppuccin",
       colorscheme = "nord",
       -- colorscheme = "tokyonight",
+    },
+  },
+  -- add tsserver and setup with typescript.nvim
+  {
+    "neovim/nvim-lspconfig",
+    dependencies = {
+      "jose-elias-alvarez/typescript.nvim",
+      init = function()
+        require("lazyvim.util").lsp.on_attach(function(_, buffer)
+          -- stylua: ignore
+          vim.keymap.set( "n", "<leader>co", "TypescriptOrganizeImports", { buffer = buffer, desc = "Organize Imports" })
+          vim.keymap.set("n", "<leader>cR", "TypescriptRenameFile", { desc = "Rename File", buffer = buffer })
+        end)
+      end,
+    },
+    ---@class PluginLspOpts
+    opts = {
+      ---@type lspconfig.options
+      servers = {
+        -- tsserver will be automatically installed with mason and loaded with lspconfig
+        tsserver = {},
+      },
+      -- you can do any additional lsp server setup here
+      -- return true if you don't want this server to be setup with lspconfig
+      ---@type table<string, fun(server:string, opts:_.lspconfig.options):boolean?>
+      setup = {
+        -- example to setup with typescript.nvim
+        tsserver = function(_, opts)
+          require("typescript").setup({ server = opts })
+          return true
+        end,
+        -- Specify * to use this function as a fallback for any server
+        -- ["*"] = function(server, opts) end,
+      },
     },
   },
 
@@ -37,7 +72,59 @@ return {
 
   { "folke/zen-mode.nvim", opts = {} },
   { "folke/twilight.nvim", opts = {} },
-  { "andymass/vim-matchup", opts = {} },
+  {
+    "andymass/vim-matchup",
+    init = function()
+      vim.g.matchup_matchparen_offscreen = {}
+    end,
+  },
+  {
+    "nvim-treesitter/nvim-treesitter",
+    dependencies = {
+      "nvim-treesitter/nvim-treesitter-textobjects",
+      { "nvim-treesitter/nvim-treesitter-context", opts = { enable = false } },
+      "JoosepAlviste/nvim-ts-context-commentstring",
+      "RRethy/nvim-treesitter-endwise",
+      "windwp/nvim-ts-autotag",
+      "andymass/vim-matchup",
+    },
+    opts = {
+      highlight = { enable = true },
+      indent = { enable = true },
+      refactor = {
+        highlight_definitions = { enable = true },
+        highlight_current_scope = { enable = true },
+      },
+      -- See: https://github.com/RRethy/nvim-treesitter-endwise
+      endwise = { enable = true },
+      -- See: https://github.com/andymass/vim-matchup
+      matchup = {
+        enable = true,
+        include_match_words = true,
+      },
+      -- See: https://github.com/windwp/nvim-ts-autotag
+      autotag = {
+        enable = true,
+        -- Removed markdown due to errors
+        filetypes = {
+          "glimmer",
+          "handlebars",
+          "hbs",
+          "html",
+          "javascript",
+          "javascriptreact",
+          "jsx",
+          "rescript",
+          "svelte",
+          "tsx",
+          "typescript",
+          "typescriptreact",
+          "vue",
+          "xml",
+        },
+      },
+    },
+  },
   {
     "ThePrimeagen/refactoring.nvim",
     dependencies = {
@@ -330,18 +417,19 @@ return {
   },
 
   -- cmp-rg
-  {
-    "lukas-reineke/cmp-rg",
-  },
+  -- {
+  --   "lukas-reineke/cmp-rg",
+  -- },
   -- override nvim-cmp and add cmp-rg
-  {
-    "hrsh7th/nvim-cmp",
-    dependencies = { "lukas-reineke/cmp-rg" },
-    ---@param opts cmp.ConfigSchema
-    opts = function(_, opts)
-      table.insert(opts.sources, { name = "rg" })
-    end,
-  },
+  -- {
+  --   "hrsh7th/nvim-cmp",
+  --   dependencies = { "lukas-reineke/cmp-rg" },
+  --   ---@param opts cmp.ConfigSchema
+  --   opts = function(_, opts)
+  --     table.insert(opts.sources, { name = "rg" })
+  --   end,
+  -- },
+
   -- mason-null-ls
   {
     "jay-babu/mason-null-ls.nvim",
