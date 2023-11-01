@@ -41,7 +41,7 @@ keymap(
   { desc = "Files in current buf Dir", noremap = true, silent = true }
 )
 
-keymap("n", "<leader>rn", ":IncRename", { desc = "Inc Rename", noremap = true, silent = true })
+keymap("n", "<leader>wf", "<cmd>FocusToggle<CR>", { desc = "Toggle Focus", noremap = true, silent = false })
 
 keymap(
   "n",

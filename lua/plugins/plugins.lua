@@ -325,7 +325,7 @@ return {
       scope = { enabled = true },
     },
     keys = {
-      { "<Leader>ub", "<cmd>IBLToggle<CR>" },
+      { "<Leader>ue", "<cmd>IBLToggle<CR>", desc = "Toggle indentation lines" },
     },
   },
 
@@ -353,21 +353,25 @@ return {
     name = "zk",
     ft = "markdown",
     cmd = { "ZkNew", "ZkNotes", "ZkTags", "ZkMatch" },
-		-- stylua: ignore
-		keys = {
-			{ '<leader>zn', "<Cmd>ZkNew { title = vim.fn.input('Title: ') }<CR>", desc = 'Zk New' },
-			{ '<leader>zo', "<Cmd>ZkNotes { sort = { 'modified' } }<CR>", desc = 'Zk Notes' },
-			{ '<leader>zt', '<Cmd>ZkTags<CR>', desc = 'Zk Tags' },
-			{ '<leader>zf', "<Cmd>ZkNotes { sort = { 'modified' }, match = vim.fn.input('Search: ') }<CR>", desc = 'Zk Search' },
-			{ '<leader>zf', ":'<,'>ZkMatch<CR>", mode = 'x', desc = 'Zk Match' },
-			{ '<leader>zb', '<Cmd>ZkBacklinks<CR>', desc = 'Zk Backlinks' },
-			{ '<leader>zl', '<Cmd>ZkLinks<CR>', desc = 'Zk Links' },
-		},
+    keys = {
+      { "<leader>zn", "<Cmd>ZkNew { title = vim.fn.input('Title: ') }<CR>", desc = "Zk New" },
+      { "<leader>zo", "<Cmd>ZkNotes { sort = { 'modified' } }<CR>", desc = "Zk Notes" },
+      { "<leader>zt", "<Cmd>ZkTags<CR>", desc = "Zk Tags" },
+      {
+        "<leader>zf",
+        "<Cmd>ZkNotes { sort = { 'modified' }, match = vim.fn.input('Search: ') }<CR>",
+        desc = "Zk Search",
+      },
+      { "<leader>zf", ":'<,'>ZkMatch<CR>", mode = "x", desc = "Zk Match" },
+      { "<leader>zb", "<Cmd>ZkBacklinks<CR>", desc = "Zk Backlinks" },
+      { "<leader>zl", "<Cmd>ZkLinks<CR>", desc = "Zk Links" },
+    },
     opts = { picker = "telescope" },
   },
+
   {
     "nvim-focus/focus.nvim",
     version = false,
-    config = true,
+    enabled = false,
   },
 }
