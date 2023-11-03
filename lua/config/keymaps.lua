@@ -36,7 +36,7 @@ keymap(
 
 keymap(
   "n",
-  ",d",
+  "<leader>fd",
   "<cmd>lua require('telescope.builtin').find_files({cwd=vim.fn.expand('%:p:h'), prompt_title=' Files in Current Buffer Dir '})<CR>",
   { desc = "Files in current buf Dir", noremap = true, silent = true }
 )

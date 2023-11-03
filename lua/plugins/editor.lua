@@ -29,8 +29,88 @@ local handler = function(virtText, lnum, endLnum, width, truncate)
   table.insert(newVirtText, { suffix, "MoreMsg" })
   return newVirtText
 end
-
 return {
+  -- add symbols-outline
+  {
+    "simrat39/symbols-outline.nvim",
+    cmd = "SymbolsOutline",
+    keys = { { "<leader>cs", "<cmd>SymbolsOutline<cr>", desc = "Symbols Outline" } },
+    config = true,
+  },
+
+  -- Neogit
+  {
+    "NeogitOrg/neogit",
+    dependencies = {
+      "sindrets/diffview.nvim",
+      "nvim-telescope/telescope.nvim",
+    },
+    cmd = "Neogit",
+    keys = {
+      { "<Leader>gn", "<cmd>Neogit<CR>", desc = "Neogit" },
+    },
+    -- See: https://github.com/TimUntersberger/neogit#configuration
+    opts = {
+      disable_signs = false,
+      disable_context_highlighting = false,
+      disable_commit_confirmation = false,
+      signs = {
+        section = { ">", "v" },
+        item = { ">", "v" },
+        hunk = { "", "" },
+      },
+      integrations = {
+        diffview = true,
+      },
+    },
+  },
+
+  -- Diffview
+  {
+    "sindrets/diffview.nvim",
+    cmd = { "DiffviewOpen", "DiffviewFileHistory" },
+    keys = {
+      { "<Leader>gv", "<cmd>DiffviewOpen<CR>", desc = "Diff View" },
+    },
+    opts = function()
+      local actions = require("diffview.actions")
+      vim.api.nvim_create_autocmd({ "WinEnter", "BufEnter" }, {
+        group = vim.api.nvim_create_augroup("rafi_diffview", {}),
+        pattern = "diffview:///panels/*",
+        callback = function()
+          vim.opt_local.winhighlight = "CursorLine:WildMenu"
+        end,
+      })
+
+      return {
+        enhanced_diff_hl = true, -- See ':h diffview-config-enhanced_diff_hl'
+        keymaps = {
+          view = {
+            { "n", "q", "<cmd>DiffviewClose<CR>" },
+            { "n", "<Tab>", actions.select_next_entry },
+            { "n", "<S-Tab>", actions.select_prev_entry },
+            { "n", "<LocalLeader>a", actions.focus_files },
+            { "n", "<LocalLeader>e", actions.toggle_files },
+          },
+          file_panel = {
+            { "n", "q", "<cmd>DiffviewClose<CR>" },
+            { "n", "h", actions.prev_entry },
+            { "n", "o", actions.focus_entry },
+            { "n", "gf", actions.goto_file },
+            { "n", "sg", actions.goto_file_split },
+            { "n", "st", actions.goto_file_tab },
+            { "n", "<C-r>", actions.refresh_files },
+            { "n", ";e", actions.toggle_files },
+          },
+          file_history_panel = {
+            { "n", "q", "<cmd>DiffviewClose<CR>" },
+            { "n", "o", actions.focus_entry },
+            { "n", "O", actions.options },
+          },
+        },
+      }
+    end,
+  },
   {
     "kevinhwang91/nvim-ufo",
     -- enabled = false,
@@ -114,4 +194,35 @@ return {
       require("ufo").setup(opts)
     end,
   },
+
+  -- Zk
+  {
+    "mickael-menu/zk-nvim",
+    name = "zk",
+    ft = "markdown",
+    cmd = { "ZkNew", "ZkNotes", "ZkTags", "ZkMatch" },
+    keys = {
+      { "<leader>zn", "<Cmd>ZkNew { title = vim.fn.input('Title: ') }<CR>", desc = "Zk New" },
+      { "<leader>zo", "<Cmd>ZkNotes { sort = { 'modified' } }<CR>", desc = "Zk Notes" },
+      { "<leader>zt", "<Cmd>ZkTags<CR>", desc = "Zk Tags" },
+      {
+        "<leader>zf",
+        "<Cmd>ZkNotes { sort = { 'modified' }, match = vim.fn.input('Search: ') }<CR>",
+        desc = "Zk Search",
+      },
+      { "<leader>zf", ":'<,'>ZkMatch<CR>", mode = "x", desc = "Zk Match" },
+      { "<leader>zb", "<Cmd>ZkBacklinks<CR>", desc = "Zk Backlinks" },
+      { "<leader>zl", "<Cmd>ZkLinks<CR>", desc = "Zk Links" },
+    },
+    opts = { picker = "telescope" },
+  },
+
+  -- FZF
+  { "junegunn/fzf", build = "./install --bin" },
+
+  -- Twig
+  { "nelsyeung/twig.vim" },
+
+  -- phpactor
+  { "phpactor/phpactor" },
 }

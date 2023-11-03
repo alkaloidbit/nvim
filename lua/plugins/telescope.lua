@@ -386,7 +386,7 @@ return {
       local bg = require("utils").bg
       local fg = require("utils").fg
 
-      local colors = require("plugins.colorscheme.nord.named_colors")
+      local colors = require("colorscheme.nord.named_colors")
 
       fg_bg("TelescopePromptPrefix", colors.red, colors.black2)
 
