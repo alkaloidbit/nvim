@@ -18,6 +18,14 @@ return {
       -- colorscheme = "tokyonight",
     },
   },
+  {
+    "stevearc/conform.nvim",
+    opts = {
+      formatters_by_ft = {
+        php = { { "php_cs_fixer", "phpcbf" } },
+      },
+    },
+  },
   -- add tsserver and setup with typescript.nvim
   {
     "neovim/nvim-lspconfig",
