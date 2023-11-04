@@ -46,6 +46,7 @@ return {
       },
     },
   },
+  -- dropbar
   {
     "Bekaboo/dropbar.nvim",
     enabled = false,
@@ -88,8 +89,10 @@ return {
   -- nvim-focus
   {
     "nvim-focus/focus.nvim",
-    version = false,
-    enabled = false,
+    opts = {
+      enable = false,
+      autoresize = { enable = false },
+    },
   },
   -- bufferline
   {
