@@ -15,7 +15,7 @@ opt.laststatus = 3 -- global statusline
 opt.colorcolumn = ""
 
 vim.g.nord_contrast = false
-vim.g.nord_borders = false
+vim.g.nord_borders = true
 vim.g.disable_background = false
 vim.g.nord_italic = false
 vim.g.nord_cursorline_transparent = false

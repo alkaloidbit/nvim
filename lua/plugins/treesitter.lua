@@ -78,4 +78,18 @@ return {
       end,
     },
   },
+
+  -- tree-sitter-blade
+  {
+    "EmranMR/tree-sitter-blade",
+    opts = {},
+    config = function()
+      return {
+        ensure_installed = "blade",
+        highlight = {
+          enable = true,
+        },
+      }
+    end,
+  },
 }
