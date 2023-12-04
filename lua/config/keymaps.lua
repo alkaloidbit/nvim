@@ -42,10 +42,12 @@ keymap(
 )
 
 keymap("n", "<leader>wf", "<cmd>FocusToggle<CR>", { desc = "Toggle Focus", noremap = true, silent = false })
-
 keymap(
   "n",
   "<leader>zz",
   "<cmd>lua require('zen-mode').toggle({ window = { width = .85 } })<CR>",
   { desc = "Zen Mode", noremap = true, silent = false }
 )
+
+-- Split window right
+keymap("n", "<leader>\\", "<C-W>v", { desc = "Split window right", noremap = true })
