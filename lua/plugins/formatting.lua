@@ -4,6 +4,7 @@ return {
     opts = {
       formatters_by_ft = {
         php = { { "php_cs_fixer", "phpcbf" } },
+        twig = { { "prettierd", "prettier" } },
       },
     },
   },
