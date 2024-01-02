@@ -380,6 +380,7 @@ return {
       require("telescope").setup(opts)
       require("telescope").load_extension("aerial")
       require("telescope").load_extension("fzf")
+      require("telescope").load_extension("luasnip")
 
       -- Highlights
       local fg_bg = require("utils").fg_bg
@@ -404,6 +405,9 @@ return {
       fg_bg("TelescopeResultsTitle", colors.darker_black, colors.darker_black)
       fg_bg("TelescopePromptPrefix", colors.red, colors.black2)
     end,
+  },
+  {
+    "benfowler/telescope-luasnip.nvim",
   },
 
   -- add telescope-fzf-native

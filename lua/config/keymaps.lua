@@ -41,6 +41,13 @@ keymap(
   { desc = "Files in current buf Dir", noremap = true, silent = true }
 )
 
+keymap(
+  "n",
+  "<leader>fs",
+  "<cmd>lua require('telescope').extensions.luasnip.luasnip{}<CR>",
+  { desc = "Snippets for current ft", noremap = true, silent = true }
+)
+
 keymap("n", "<leader>wf", "<cmd>FocusToggle<CR>", { desc = "Toggle Focus", noremap = true, silent = false })
 keymap(
   "n",
