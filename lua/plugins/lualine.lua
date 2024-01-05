@@ -2,10 +2,7 @@ local fn = vim.fn
 local cwd = function()
   local dir_icon = "󰉋 "
   local dir_name = fn.fnamemodify(fn.getcwd(), ":t") .. " "
-  -- return (vim.o.columns > 85 and ("%#lualine_x_diff_added_insert#" .. dir_icon .. dir_name)) or ""
   return (vim.o.columns > 85 and ("%#LualineCwd#" .. dir_icon .. dir_name)) or ""
-  -- return (vim.o.columns > 85 and ("%#DiffChange#" .. dir_icon .. dir_name)) or ""
-  -- return (vim.o.columns > 85 and ("%#Headline1#" .. dir_icon .. dir_name)) or ""
 end
 
 return {
