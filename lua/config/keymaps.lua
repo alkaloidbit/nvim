@@ -55,6 +55,23 @@ keymap(
   "<cmd>lua require('zen-mode').toggle({ window = { width = .85 } })<CR>",
   { desc = "Zen Mode", noremap = true, silent = false }
 )
+-- Replace word under cursor in Buffer (case-sensitive)
+-- nmap <leader>srb :%s/<C-R><C-W>//gI<left><left><left>
+keymap(
+  "n",
+  "<leader>srb",
+  ":%s/<C-R><C-W>//gI<left><left><left>",
+  { desc = "Replace word under cursor in Buffer (case-sensitive)", noremap = false }
+)
+
+-- Replace word under cursor on Line (case-sensitive)
+-- nmap <leader>srl :s/<C-R><C-W>//gI<left><left><left>
+keymap(
+  "n",
+  "<leader>srl",
+  ":s/<C-R><C-W>//gI<left><left><left>",
+  { desc = "Replace word under cursor on Line (case-sensitive)", noremap = false }
+)
 
 -- Split window right
 keymap("n", "<leader>\\", "<C-W>v", { desc = "Split window right", noremap = true })

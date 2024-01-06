@@ -195,6 +195,17 @@ return {
     end,
   },
 
+  -- Spectre: search/replace in multiple files
+  {
+    "nvim-pack/nvim-spectre",
+    build = false,
+    cmd = "Spectre",
+    opts = { open_cmd = "noswapfile vnew" },
+    -- stylua: ignore
+    keys = {
+      { "<leader>srs", function() require("spectre").open() end, desc = "Replace in files (Spectre)" },
+    },
+  },
   -- Zk
   {
     "mickael-menu/zk-nvim",
@@ -225,4 +236,24 @@ return {
 
   -- phpactor
   { "phpactor/phpactor" },
+
+  -- Chrome Bookmarks
+  {
+    "dhruvmanila/browser-bookmarks.nvim",
+    version = "*",
+    -- Only required to override the default options
+    opts = {
+      -- Override default configuration values
+      selected_browser = "chrome",
+      url_open_command = "xdg-open",
+      debug = true,
+    },
+    dependencies = {
+      --   -- Only if your selected browser is Firefox, Waterfox or buku
+      --   'kkharji/sqlite.lua',
+      --
+      --   -- Only if you're using the Telescope extension
+      "nvim-telescope/telescope.nvim",
+    },
+  },
 }
