@@ -8,20 +8,18 @@ end
 return {
   {
     "nvim-lualine/lualine.nvim",
-    opts = {
-      options = {
-        component_separators = { left = "", right = "" },
-        section_separators = { left = "", right = "" },
-      },
-    },
-  },
-
-  -- the opts function can also be used to change the default opts:
-  {
-    "nvim-lualine/lualine.nvim",
     event = "VeryLazy",
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+      "nvim-tree/nvim-web-devicons",
+      "meuter/lualine-so-fancy.nvim",
+    },
     opts = function(_, opts)
-      table.insert(opts.sections.lualine_x, cwd)
+      table.insert(opts.sections.lualine_x, { "fancy_cwd", substitute_home = true })
+      opts.options = {
+        section_separators = { left = "", right = "" },
+        component_separators = { left = "", right = "" },
+      }
     end,
   },
 }
