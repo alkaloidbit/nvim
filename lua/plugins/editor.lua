@@ -233,6 +233,7 @@ return {
 
   -- Twig
   { "nelsyeung/twig.vim" },
+  { "lumiliet/vim-twig" },
 
   -- phpactor
   { "phpactor/phpactor" },
