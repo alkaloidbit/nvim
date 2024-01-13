@@ -16,7 +16,7 @@ function M.reload()
 
   local prompt_title = "Neovim Modules"
 
-  local path = "~/.config/lazy-vim/nvim/lua"
+  local path = "~/.config/nvim/lua"
 
   local opts = {
     prompt_title = prompt_title,
