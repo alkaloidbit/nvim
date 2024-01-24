@@ -120,7 +120,7 @@ vim.api.nvim_create_autocmd("User", {
     vim.opt_local.conceallevel = 0
     vim.opt_local.wrap = true
     vim.opt_local.list = true
-    vim.opt_local.number = true
+    vim.opt_local.number = false
   end,
 })
 
@@ -377,6 +377,7 @@ return {
       }
     end,
     config = function(_, opts)
+      dofile(vim.g.base46_cache .. "telescope")
       require("telescope").setup(opts)
       require("telescope").load_extension("aerial")
       require("telescope").load_extension("fzf")

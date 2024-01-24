@@ -7,18 +7,18 @@ return {
   },
 
   -- Configure LazyVim to load nord
-  {
-    "LazyVim/LazyVim",
-    opts = {
-      -- colorscheme = "catppuccin",
-      colorscheme = "nord",
-      -- colorscheme = "tokyonight",
-    },
-  },
+  -- {
+  --   "LazyVim/LazyVim",
+  --   opts = {
+  --     -- colorscheme = "catppuccin",
+  -- colorscheme = "nord",
+  --     -- colorscheme = "tokyonight",
+  --   },
+  -- },
 
   -- tokyonight
-  {
-    "folke/tokyonight.nvim",
-    opts = { style = "storm" },
-  },
+  -- {
+  --   "folke/tokyonight.nvim",
+  --   opts = { style = "storm" },
+  -- },
 }

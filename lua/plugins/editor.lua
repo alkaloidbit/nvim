@@ -257,4 +257,19 @@ return {
       "nvim-telescope/telescope.nvim",
     },
   },
+  {
+    "folke/trouble.nvim",
+    config = function(_, opts)
+      dofile(vim.g.base46_cache .. "trouble")
+      require("trouble").setup(opts)
+    end,
+  },
+
+  -- {
+  --   "lewis6991/gitsigns.nvim",
+  --   config = function(_, opts)
+  --     dofile(vim.g.base46_cache .. "git")
+  --     require("gitsigns").setup(opts)
+  --   end,
+  -- },
 }

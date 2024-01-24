@@ -3,6 +3,7 @@
     "/home/fred-badlieutenant/.local/share/nvim/dein/repos/github.com/folke/neodev.nvim/types/nightly",
     "/usr/share/nvim/runtime/lua",
     "/home/fred-badlieutenant/.config/nvim/lua",
+    "/home/fred-badlieutenant/.local/share/nvim/lazy/ui/nvchad_types/",
     "${3rd}/luv/library"
   ]
 }

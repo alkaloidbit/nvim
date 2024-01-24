@@ -1,3 +1,46 @@
+dofile(vim.g.base46_cache .. "cmp")
+local cmp_ui = require("core.utils").load_config().ui.cmp
+local cmp_style = cmp_ui.style
+
+local field_arrangement = {
+  atom = { "kind", "abbr", "menu" },
+  atom_colored = { "kind", "abbr", "menu" },
+}
+
+local formatting_style = {
+  -- default fields order i.e completion word + item.kind + item.kind icons
+  fields = field_arrangement[cmp_style] or { "abbr", "kind", "menu" },
+
+  format = function(_, item)
+    local icons = require("nvchad.icons.lspkind")
+    local icon = (cmp_ui.icons and icons[item.kind]) or ""
+
+    if cmp_style == "atom" or cmp_style == "atom_colored" then
+      icon = " " .. icon .. " "
+      item.menu = cmp_ui.lspkind_text and "   (" .. item.kind .. ")" or ""
+      item.kind = icon
+    else
+      icon = cmp_ui.lspkind_text and (" " .. icon .. " ") or icon
+      item.kind = string.format("%s %s", icon, cmp_ui.lspkind_text and item.kind or "")
+    end
+
+    return item
+  end,
+}
+
+local function border(hl_name)
+  return {
+    { "╭", hl_name },
+    { "─", hl_name },
+    { "╮", hl_name },
+    { "│", hl_name },
+    { "╯", hl_name },
+    { "─", hl_name },
+    { "╰", hl_name },
+    { "│", hl_name },
+  }
+end
+
 return {
   -- refactoring.nvim
   {
@@ -16,17 +59,9 @@ return {
     cmd = "IncRename",
     config = true,
   },
-  -- override nvim-cmp and add cmp-emoji
-  {
-    "hrsh7th/nvim-cmp",
-    dependencies = { "hrsh7th/cmp-emoji" },
-    ---@param opts cmp.ConfigSchema
-    opts = function(_, opts)
-      table.insert(opts.sources, { name = "emoji" })
-    end,
-  },
 
   -- Use <tab> for completion and snippets (supertab)
+  -- first: disable default <tab> and <s-tab> behavior in LuaSnip
   {
     "L3MON4D3/LuaSnip",
     keys = function()
@@ -34,7 +69,6 @@ return {
     end,
   },
 
-  -- first: disable default <tab> and <s-tab> behavior in LuaSnip
   -- then: setup supertab in cmp
   {
     "hrsh7th/nvim-cmp",
@@ -43,6 +77,9 @@ return {
     },
     ---@param opts cmp.ConfigSchema
     opts = function(_, opts)
+      local cmp = require("cmp")
+      opts.sources = cmp.config.sources(vim.list_extend(opts.sources, { { name = "emoji" } }))
+
       local has_words_before = function()
         unpack = unpack or table.unpack
         local line, col = unpack(vim.api.nvim_win_get_cursor(0))
@@ -50,7 +87,28 @@ return {
       end
 
       local luasnip = require("luasnip")
-      local cmp = require("cmp")
+
+      opts.formatting = vim.tbl_extend("force", opts.formatting, formatting_style)
+
+      opts.window = {
+        completion = {
+          side_padding = (cmp_style ~= "atom" and cmp_style ~= "atom_colored") and 1 or 0,
+          winhighlight = "Normal:CmpPmenu,CursorLine:CmpSel,Search:None",
+          scrollbar = false,
+        },
+        documentation = {
+          border = border("CmpDocBorder"),
+          winhighlight = "Normal:CmpDoc",
+        },
+      }
+
+      if cmp_style ~= "atom" and cmp_style ~= "atom_colored" then
+        opts.window.completion.border = border("CmpBorder")
+      end
+
+      opts.completion = vim.tbl_extend("force", opts.completion, {
+        completeopt = "menu,menuone,noinsert",
+      })
 
       opts.mapping = vim.tbl_extend("force", opts.mapping, {
         ["<Tab>"] = cmp.mapping(function(fallback)
