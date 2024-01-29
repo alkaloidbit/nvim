@@ -26,6 +26,7 @@ M.ui = {
 
   statusline = {
     theme = "vscode_colored",
+    enabled = false,
     separator_style = "default",
     overriden_modules = function(modules)
       -- table.insert(modules, 10, progress())
