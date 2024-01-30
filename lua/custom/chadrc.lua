@@ -3,7 +3,6 @@ local M = {}
 
 -- Path to overriding theme and highlights files
 local highlights = require("custom.highlights")
-local progress = require("custom.progress")
 M.ui = {
   hl_add = highlights.add,
   hl_override = highlights.override,
