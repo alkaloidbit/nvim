@@ -36,7 +36,7 @@ return {
       "meuter/lualine-so-fancy.nvim",
     },
     opts = function(_, opts)
-      table.insert(opts.sections.lualine_x, { "fancy_cwd", substitute_home = true })
+      table.insert(opts.sections.lualine_x, { "fancy_cwd", { substitute_home = true, colored = false } })
       -- table.insert(opts.sections.lualine_a, { "mode", icons_enabled = true, icon = "" })
       -- This is the only way to change current lualine section
       opts.sections.lualine_a = {
