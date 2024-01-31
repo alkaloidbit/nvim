@@ -31,6 +31,13 @@ M.ui = {
       -- table.insert(modules, 10, progress())
     end,
   },
+  -- -- lazyload it when there are 1+ buffers
+  tabufline = {
+    show_numbers = false,
+    enabled = false,
+    lazyload = true,
+    overriden_modules = nil,
+  },
 
   cheatsheet = { theme = "grid" }, -- simple/grid
 }
