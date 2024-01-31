@@ -123,7 +123,7 @@ return {
       },
     },
     config = function(_, opts)
-      dofile(vim.g.base46_cache .. "bufferline")
+      -- dofile(vim.g.base46_cache .. "bufferline")
       require("bufferline").setup(opts)
     end,
   },
