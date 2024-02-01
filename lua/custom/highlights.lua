@@ -9,6 +9,10 @@ M.override = {
   Comment = {
     italic = true,
   },
+  DiffAdd = { fg = "green", bg = "#3b4252" },
+  DiffDelete = { fg = "red", bg = "#3b4252" },
+  DiffChange = { fg = "yellow", bg = "#3b4252" },
+  DiffText = { fg = "purple", bg = "#3b4252" },
 }
 
 ---@type HLTable
