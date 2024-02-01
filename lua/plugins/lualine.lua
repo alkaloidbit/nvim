@@ -1,9 +1,16 @@
 local fn = vim.fn
+
 local cwd = function()
+  local dir_name = "%#St_cwd# 󰉖 " .. fn.fnamemodify(fn.getcwd(), ":t") .. " "
+  return (vim.o.columns > 85 and dir_name) or ""
+end
+
+local cwd_bis = function()
   local dir_icon = "󰉋 "
   local dir_name = fn.fnamemodify(fn.getcwd(), ":t") .. " "
   return (vim.o.columns > 85 and ("%#LualineCwd#" .. dir_icon .. dir_name)) or ""
 end
+
 local custom_nord = require("lualine.themes.nord")
 local colors = {
   nord1 = "#2E3440",
@@ -36,7 +43,7 @@ return {
       "meuter/lualine-so-fancy.nvim",
     },
     opts = function(_, opts)
-      table.insert(opts.sections.lualine_x, { "fancy_cwd", { substitute_home = true, colored = false } })
+      table.insert(opts.sections.lualine_z, 1, { cwd() })
       -- table.insert(opts.sections.lualine_a, { "mode", icons_enabled = true, icon = "" })
       -- This is the only way to change current lualine section
       opts.sections.lualine_a = {
