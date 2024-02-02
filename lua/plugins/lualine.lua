@@ -11,10 +11,6 @@ local cwd_bis = function()
   return (vim.o.columns > 85 and ("%#LualineCwd#" .. dir_icon .. dir_name)) or ""
 end
 
-local function is_activewin()
-  return vim.api.nvim_get_current_win() == vim.g.statusline_winid
-end
-
 local modes = {
   ["n"] = { "NORMAL", "St_NormalMode" },
   ["no"] = { "NORMAL (no)", "St_NormalMode" },
@@ -101,10 +97,8 @@ return {
     },
     opts = function(_, opts)
       table.insert(opts.sections.lualine_z, 1, { cwd() })
-      -- table.insert(opts.sections.lualine_a, { "mode", icons_enabled = true, icon = "" })
-      -- This is the only way to change current lualine section
       opts.sections.lualine_a = {
-        { mode() },
+        { "mode", icons_enabled = true, icon = "" },
       }
       opts.options = {
         section_separators = { left = "", right = "" },

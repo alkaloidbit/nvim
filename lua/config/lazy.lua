@@ -11,13 +11,6 @@ vim.opt.rtp:prepend(vim.env.LAZY or lazypath)
 
 require("lazy").setup({
   spec = {
-    {
-      "alkaloidbit/base46",
-      branch = "v2.0",
-      build = function()
-        require("base46").load_all_highlights()
-      end,
-    },
     -- add LazyVim and import its plugins
     { "alkaloidbit/LazyVim", import = "lazyvim.plugins" },
     -- import any extras modules here
@@ -27,6 +20,13 @@ require("lazy").setup({
     -- { import = "lazyvim.plugins.extras.editor.aerial" },
     -- import/override with your plugins
     { import = "plugins" },
+    {
+      "alkaloidbit/base46",
+      branch = "v2.0",
+      build = function()
+        require("base46").load_all_highlights()
+      end,
+    },
     {
       "alkaloidbit/ui",
       branch = "v2.0",
