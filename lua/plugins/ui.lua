@@ -122,10 +122,10 @@ return {
         separator_style = "slant",
       },
     },
-    config = function(_, opts)
-      -- dofile(vim.g.base46_cache .. "bufferline")
-      require("bufferline").setup(opts)
-    end,
+    -- config = function(_, opts)
+    -- dofile(vim.g.base46_cache .. "bufferline")
+    -- require("bufferline").setup(opts)
+    -- end,
   },
   {
     "folke/which-key.nvim",
