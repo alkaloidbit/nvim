@@ -13,6 +13,7 @@ M.override = {
   DiffDelete = { fg = "red", bg = "#3b4252" },
   DiffChange = { fg = "yellow", bg = "#3b4252" },
   DiffText = { fg = "purple", bg = "#3b4252" },
+  St_cwd = { fg = "red", bg = "statusline_bg" },
 }
 
 ---@type HLTable
