@@ -48,6 +48,7 @@ keymap(
   { desc = "Snippets for current ft", noremap = true, silent = true }
 )
 
+keymap("n", "<leader>ua", "<cmd>ColorizerToggle<CR>", { desc = "Toggle Colorizer", noremap = true, silent = false })
 keymap("n", "<leader>wf", "<cmd>FocusToggle<CR>", { desc = "Toggle Focus", noremap = true, silent = false })
 keymap(
   "n",
