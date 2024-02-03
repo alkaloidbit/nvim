@@ -19,6 +19,11 @@ M.override = {
 ---@type HLTable
 M.add = {
   NvimTreeOpenedFolderName = { fg = "green", bold = true },
+
+  DashboardFooter = { italic = true, fg = "#e39a83" },
+  DashboardHeader = { fg = "#7797b7" },
+  DashboardCenter = { fg = "#9aafe6" },
+  DashboardShortCut = { fg = "#e39a83" },
 }
 
 return M
