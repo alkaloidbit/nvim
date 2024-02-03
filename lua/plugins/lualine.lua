@@ -76,12 +76,25 @@ local colors = {
   nord7 = "#8FBCBB",
   nord8 = "#88C0D0",
   nord13 = "#EBCB8B",
+  darkpurple = "#a983a2",
+  one_bg3 = "#494f5b",
 }
 
-custom_nord.normal.a.fg = colors.nord8
+custom_nord.normal.a.fg = "#7797b7"
 custom_nord.normal.a.bg = colors.nord2
+
+custom_nord.insert.a.fg = colors.darkpurple
+custom_nord.insert.a.bg = colors.one_bg3
+
+custom_nord.visual.a.fg = "#9aafe6"
+custom_nord.visual.a.bg = colors.one_bg3
+
+custom_nord.replace.a.fg = "#e39a83"
+custom_nord.replace.a.bg = colors.one_bg3
+
 custom_nord.normal.b.fg = colors.statusline_fg
 custom_nord.normal.b.bg = colors.statusline_bg
+
 custom_nord.normal.c.fg = colors.statusline_fg
 custom_nord.normal.c.bg = colors.statusline_bg
 
