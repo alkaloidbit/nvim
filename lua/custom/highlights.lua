@@ -15,6 +15,10 @@ M.override = {
   DiffText = { fg = "purple", bg = "#3b4252" },
   St_cwd = { fg = "red", bg = "statusline_bg" },
   MatchWord = { bold = true, fg = "#b48ead" },
+
+  IlluminatedWordText = { underline = false, bg = "#4c566a" },
+  IlluminatedWordRead = { underline = false, bg = "#4c566a" },
+  IlluminatedWordWrite = { underline = false, bg = "#4c566a" },
 }
 
 ---@type HLTable
@@ -25,6 +29,10 @@ M.add = {
   DashboardHeader = { fg = "#7797b7" },
   DashboardCenter = { fg = "#9aafe6" },
   DashboardShortCut = { fg = "#e39a83" },
+
+  IlluminatedWordText = { underline = false, bg = "#4c566a" },
+  IlluminatedWordRead = { underline = false, bg = "#4c566a" },
+  IlluminatedWordWrite = { underline = false, bg = "#4c566a" },
 }
 
 return M

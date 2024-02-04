@@ -1,6 +1,6 @@
 {
   "ChatGPT.nvim": { "branch": "main", "commit": "16eddf50d92fd089726f78d039982f8561bf90e6" },
-  "LazyVim": { "branch": "main", "commit": "e94dc5506b2c3065be320d47f5d510d936535922" },
+  "LazyVim": { "branch": "main", "commit": "d76a83347db3c1b8c819fc015c9b5e2a40122fa3" },
   "LuaSnip": { "branch": "master", "commit": "2dbef19461198630b3d7c39f414d09fb07d1fdd2" },
   "SchemaStore.nvim": { "branch": "main", "commit": "be4d1084397c9b9d3d5a41bda871e6b20415bf48" },
   "aerial.nvim": { "branch": "master", "commit": "d21482d3be3228dde594aba31106db428292742c" },
@@ -86,7 +86,7 @@
   "typescript.nvim": { "branch": "main", "commit": "4de85ef699d7e6010528dcfbddc2ed4c2c421467" },
   "ui": { "branch": "v2.0", "commit": "5906ed7b5908cc74d86eab4a81c25d774b431dc2" },
   "venv-selector.nvim": { "branch": "main", "commit": "fcb30164f2c4f8a34a305ead3247954a1fd8634f" },
-  "vim-illuminate": { "branch": "master", "commit": "97c1265ff0b67064b6cfdc15bafc50202a537ae2" },
+  "vim-illuminate": { "branch": "master", "commit": "305bf07b919ac526deb5193280379e2f8b599926" },
   "vim-matchup": { "branch": "master", "commit": "7f81ae12542b2a35819f0324895df9bd8626c8ba" },
   "vim-startuptime": { "branch": "master", "commit": "454b3de856b7bd298700de33d79774ca9b9e3875" },
   "vim-twig": { "branch": "master", "commit": "ad115512725bcc156f7f89b72ff563b9fa44933b" },
