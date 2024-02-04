@@ -19,6 +19,8 @@ M.override = {
   IlluminatedWordText = { underline = false, bg = "#4c566a" },
   IlluminatedWordRead = { underline = false, bg = "#4c566a" },
   IlluminatedWordWrite = { underline = false, bg = "#4c566a" },
+
+  DiagnosticHint = { fg = "#7797b7" },
 }
 
 ---@type HLTable

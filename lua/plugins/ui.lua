@@ -116,6 +116,7 @@ return {
   -- bufferline
   {
     "akinsho/bufferline.nvim",
+    enabled = true,
     opts = {
       options = {
         mode = "tabs", -- set to "tabs" to only show tabpages instead
@@ -123,8 +124,8 @@ return {
       },
     },
     -- config = function(_, opts)
-    -- dofile(vim.g.base46_cache .. "bufferline")
-    -- require("bufferline").setup(opts)
+    --   dofile(vim.g.base46_cache .. "bufferline")
+    --   require("bufferline").setup(opts)
     -- end,
   },
   {
