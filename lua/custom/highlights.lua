@@ -14,6 +14,7 @@ M.override = {
   DiffChange = { fg = "yellow", bg = "#3b4252" },
   DiffText = { fg = "purple", bg = "#3b4252" },
   St_cwd = { fg = "red", bg = "statusline_bg" },
+  MatchWord = { bold = true, fg = "#b48ead" },
 }
 
 ---@type HLTable
