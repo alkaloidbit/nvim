@@ -32,7 +32,7 @@ end, {})
 
 -- Disabling Focus
 -- https://github.com/nvim-focus/focus.nvim
-local ignore_filetypes = { "neo-tree", "TelescopePrompt" }
+local ignore_filetypes = { "neo-tree", "NvimTree", "TelescopePrompt" }
 local ignore_buftypes = { "nofile", "prompt", "popup" }
 
 local augroup = vim.api.nvim_create_augroup("FocusDisable", { clear = true })

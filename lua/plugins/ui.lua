@@ -86,6 +86,7 @@ return {
           "alpha",
           "dashboard",
           "neo-tree",
+          "NvimTree",
           "Trouble",
           "trouble",
           "lazy",

@@ -264,6 +264,52 @@ return {
       require("trouble").setup(opts)
     end,
   },
+  {
+    "nvim-neo-tree/neo-tree.nvim",
+    opts = {
+      default_component_configs = {
+        icon = {
+          folder_closed = "",
+          folder_open = "",
+          folder_empty = "",
+        },
+        indent = {
+          with_markers = false,
+        },
+      },
+    },
+  },
+  -- file managing , picker etc
+  {
+    "nvim-tree/nvim-tree.lua",
+    enabled = false,
+    cmd = { "NvimTreeToggle", "NvimTreeFocus" },
+    init = function()
+      require("core.utils").load_mappings("nvimtree")
+    end,
+    opts = function()
+      return require("plugins.configs.nvimtree")
+    end,
+    config = function(_, opts)
+      dofile(vim.g.base46_cache .. "nvimtree")
+      require("nvim-tree").setup(opts)
+    end,
+  },
+
+  {
+    "RRethy/vim-illuminate",
+    opts = {
+      delay = 200,
+      large_file_cutoff = 2000,
+      large_file_overrides = {
+        providers = { "lsp", "treesitter", "regex" },
+      },
+      filetypes_denylist = { "NvimTree", "neo-tree", "TelescopePrompt", "spectre_panel" },
+    },
+    config = function(_, opts)
+      require("illuminate").configure(opts)
+    end,
+  },
 
   -- {
   --   "lewis6991/gitsigns.nvim",
