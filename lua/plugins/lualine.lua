@@ -113,6 +113,9 @@ return {
       opts.sections.lualine_a = {
         { "mode", icons_enabled = true, icon = "" },
       }
+      opts.sections.lualine_b = {
+        { "branch", padding = { left = 2, right = 1 } },
+      }
       opts.options = {
         section_separators = { left = "", right = "" },
         component_separators = { left = "", right = "" },

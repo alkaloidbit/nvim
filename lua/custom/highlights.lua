@@ -22,6 +22,7 @@ M.override = {
 
   DiagnosticHint = { fg = "#7797b7" },
   NeoTreeNormal = { bg = "#2a303c" },
+  Constant = { bold = true },
 }
 
 ---@type HLTable
@@ -37,6 +38,7 @@ M.add = {
   IlluminatedWordRead = { underline = false, bg = "#4c566a" },
   IlluminatedWordWrite = { underline = false, bg = "#4c566a" },
   NeoTreeNormal = { bg = "#2a303c" },
+  Constant = { bold = true },
 }
 
 return M
