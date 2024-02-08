@@ -14,7 +14,19 @@ return {
     end,
   },
   -- { "nvimdev/dashboard-nvim", enabled = false },
-  { "folke/noice.nvim", opts = { lsp = { progress = { enabled = false } } } },
+  {
+    "folke/noice.nvim",
+    opts = {
+      lsp = {
+        progress = {
+          enabled = false,
+        },
+      },
+      presets = {
+        lsp_doc_border = true, -- add a border to hover docs and signature help
+      },
+    },
+  },
   { "folke/zen-mode.nvim", opts = {} },
   { "folke/twilight.nvim", opts = {} },
   -- nvim-bqf
