@@ -45,6 +45,7 @@ M.add = {
   BufferLineFill = { bg = "#2e3440" },
   NeoTreeVertSplit = { fg = "#2e3440", bg = "#2e3440" },
   NeoTreeWinSeparator = { fg = "#2e3440", bg = "#2e3440" },
+  AerialNormal = { fg = "nord_blue" },
 }
 
 return M
