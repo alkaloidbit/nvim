@@ -24,6 +24,8 @@ M.override = {
   NeoTreeNormal = { bg = "#2a303c" },
   Constant = { bold = true },
   BufferLineFill = { bg = "#2e3440" },
+  NeoTreeVertSplit = { fg = "#2e3440", bg = "#2e3440" },
+  NeoTreeWinSeparator = { fg = "#2e3440", bg = "#2e3440" },
 }
 
 ---@type HLTable
@@ -41,6 +43,8 @@ M.add = {
   NeoTreeNormal = { bg = "#2a303c" },
   Constant = { bold = true },
   BufferLineFill = { bg = "#2e3440" },
+  NeoTreeVertSplit = { fg = "#2e3440", bg = "#2e3440" },
+  NeoTreeWinSeparator = { fg = "#2e3440", bg = "#2e3440" },
 }
 
 return M
