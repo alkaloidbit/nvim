@@ -81,7 +81,7 @@ return {
       "nvim-telescope/telescope-fzf-native.nvim",
     },
   },
-  { "echasnovski/mini.indentscope", enabled = false },
+  { "echasnovski/mini.indentscope", enabled = true },
   -- indent-blankline
   {
     "lukas-reineke/indent-blankline.nvim",
