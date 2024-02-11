@@ -30,7 +30,6 @@ require("lazy").setup({
     {
       "alkaloidbit/ui",
       branch = "v2.0",
-      lazy = false,
     },
   },
   defaults = {
