@@ -134,6 +134,14 @@ return {
       options = {
         mode = "tabs", -- set to "tabs" to only show tabpages instead
         separator_style = "slant",
+        offsets = {
+          {
+            filetype = "neo-tree",
+            text = "File Explorer",
+            highlight = "NeoTreeOffset",
+            text_align = "center",
+          },
+        },
       },
     },
     -- config = function(_, opts)

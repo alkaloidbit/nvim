@@ -13,6 +13,8 @@ M.override = {
   DiffDelete = { fg = "red", bg = "#3b4252" },
   DiffChange = { fg = "yellow", bg = "#3b4252" },
   DiffText = { fg = "purple", bg = "#3b4252" },
+  NeoTreeGitModified = { fg = "yellow", bg = "#2e3440" },
+  NeoTreeGitAdded = { fg = "green", bg = "#2e3440" },
   St_cwd = { fg = "red", bg = "statusline_bg" },
   MatchWord = { bold = true, fg = "#b48ead" },
 
@@ -41,6 +43,8 @@ M.add = {
   IlluminatedWordRead = { underline = false, bg = "#4c566a" },
   IlluminatedWordWrite = { underline = false, bg = "#4c566a" },
   NeoTreeNormal = { bg = "#2a303c" },
+  NeoTreeOffset = { bg = "#2a303c", fg = "#e39a83" },
+  NeoTreeGitModified = { fg = "yellow", bg = "#2e3440" },
   Constant = { bold = true },
   BufferLineFill = { bg = "#2e3440" },
   NeoTreeVertSplit = { fg = "#2e3440", bg = "#2e3440" },
