@@ -24,6 +24,7 @@ M.override = {
 
   DiagnosticHint = { fg = "#7797b7" },
   NeoTreeNormal = { bg = "#2a303c" },
+  NeoTreeCursorLine = { fg = "purple", bg = "#2a303c" },
   Constant = { bold = true },
   BufferLineFill = { bg = "#2e3440" },
   NeoTreeVertSplit = { fg = "#2e3440", bg = "#2e3440" },
@@ -45,6 +46,7 @@ M.add = {
   NeoTreeNormal = { bg = "#2a303c" },
   NeoTreeOffset = { bg = "#2a303c", fg = "#e39a83" },
   NeoTreeGitModified = { fg = "yellow", bg = "#2e3440" },
+  NeoTreeCursorLine = { fg = "blue", bg = "grey" },
   Constant = { bold = true },
   BufferLineFill = { bg = "#2e3440" },
   NeoTreeVertSplit = { fg = "#2e3440", bg = "#2e3440" },
