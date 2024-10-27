@@ -47,12 +47,31 @@ return {
       ---@type lspconfig.options
       servers = {
         -- phpactor will be automatically installed with mason and loaded with lspconfig
-        phpactor = {},
         intelephense = {},
         pyright = {},
       },
       inlay_hints = {
         enabled = true,
+      },
+    },
+  },
+
+  {
+    "neovim/nvim-lspconfig",
+    opts = {
+      servers = { eslint = {} },
+      setup = {
+        eslint = function()
+          require("lazyvim.util").lsp.on_attach(function(client)
+            if client.name == "eslint" then
+              client.server_capabilities.documentFormattingProvider = true
+            elseif client.name == "tsserver" then
+              client.server_capabilities.documentFormattingProvider = false
+            elseif client.name == "vtsls" then
+              client.server_capabilities.documentFormattingProvider = false
+            end
+          end)
+        end,
       },
     },
   },
@@ -70,6 +89,30 @@ return {
   -- mason-null-ls
   {
     "jay-babu/mason-null-ls.nvim",
+    enabled = false,
     opts = { ensure_installed = nil, automatic_installation = true, automatic_setup = false },
+  },
+  -- add more treesitter parsers
+  {
+    "nvim-treesitter/nvim-treesitter",
+    opts = {
+      ensure_installed = {
+        "bash",
+        "php",
+        "html",
+        "javascript",
+        "json",
+        "lua",
+        "markdown",
+        "markdown_inline",
+        "python",
+        "query",
+        "regex",
+        "tsx",
+        "typescript",
+        "vim",
+        "yaml",
+      },
+    },
   },
 }

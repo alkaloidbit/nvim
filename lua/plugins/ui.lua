@@ -132,7 +132,7 @@ return {
     enabled = true,
     opts = {
       options = {
-        mode = "tabs", -- set to "tabs" to only show tabpages instead
+        mode = "buffers", -- set to "tabs" to only show tabpages instead
         separator_style = "slant",
         offsets = {
           {

@@ -235,9 +235,18 @@ return {
   { "nelsyeung/twig.vim" },
   { "lumiliet/vim-twig" },
 
-  -- phpactor
-  { "phpactor/phpactor" },
-
+  {
+    "gbprod/phpactor.nvim",
+    enabled = false,
+    build = function()
+      require("phpactor.handler.update")()
+    end,
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+      "neovim/nvim-lspconfig",
+    },
+    opts = {},
+  },
   -- Chrome Bookmarks
   {
     "dhruvmanila/browser-bookmarks.nvim",
