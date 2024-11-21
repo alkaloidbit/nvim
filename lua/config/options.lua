@@ -3,16 +3,6 @@
 -- Add any additional options here
 vim.g.lazyvim_php_lsp = "intelephense"
 local opt = vim.opt
-
-opt.foldcolumn = "0" -- '0' is not bad
-opt.foldlevel = 99 -- Using ufo provider need a large value, feel free to decrease the value
-opt.foldlevelstart = 99
-opt.foldenable = true
-
-opt.fillchars = [[eob: ,fold: ,foldopen:,foldsep: ,foldclose:]]
-opt.foldmethod = "indent"
-
-opt.laststatus = 3 -- global statusline
 opt.colorcolumn = ""
 
 vim.g.nord_contrast = false
