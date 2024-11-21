@@ -6,8 +6,8 @@ local highlights = require("custom.highlights")
 M.ui = {
   hl_add = highlights.add,
   hl_override = highlights.override,
-  theme_toggle = { "nord", "one_light" },
-  theme = "nord",
+  theme_toggle = { "onenord", "one_light" },
+  theme = "onenord",
   transparency = false,
   lsp_semantic_tokens = true,
 

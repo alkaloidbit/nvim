@@ -16,15 +16,13 @@ return {
   -- { "nvimdev/dashboard-nvim", enabled = false },
   {
     "folke/noice.nvim",
-    opts = {
-      lsp = {
-        progress = {
-          enabled = false,
-        },
+    lsp = {
+      progress = {
+        enabled = false,
       },
-      presets = {
-        lsp_doc_border = true, -- add a border to hover docs and signature help
-      },
+    },
+    presets = {
+      lsp_doc_border = true, -- add a border to hover docs and signature help
     },
   },
   { "folke/zen-mode.nvim", opts = {} },
@@ -87,7 +85,7 @@ return {
     "lukas-reineke/indent-blankline.nvim",
     event = "LazyFile",
     opts = {
-      enabled = false,
+      enabled = true,
       indent = {
         char = "│",
         tab_char = "│",
@@ -108,7 +106,7 @@ return {
           "lazyterm",
         },
       },
-      scope = { enabled = true },
+      scope = { enabled = false },
     },
     keys = {
       { "<Leader>ue", "<cmd>IBLToggle<CR>", desc = "Toggle indentation lines" },
