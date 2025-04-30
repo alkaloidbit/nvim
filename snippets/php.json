@@ -1,0 +1,7 @@
+{
+  "PrestaShop Tools::dieObject": {
+    "prefix": "tdo",
+    "body": ["Tools::dieObject(${1: priarg});"],
+    "description": "Invoke the dieObject method"
+  }
+}

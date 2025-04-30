@@ -39,7 +39,7 @@ return {
     },
   },
 
-  -- add pyright to lspconfig
+  -- intelephense
   {
     "neovim/nvim-lspconfig",
     ---@class PluginLspOpts
@@ -47,7 +47,25 @@ return {
       ---@type lspconfig.options
       servers = {
         -- phpactor will be automatically installed with mason and loaded with lspconfig
-        intelephense = {},
+        intelephense = {
+          settings = {
+            intelephense = {
+              stubs = {
+                "core",
+                "wordpress",
+                "woocommerce",
+                "acf-pro",
+                "wordpress-globals",
+                "wp-cli",
+                "genesis",
+                "polylang",
+              },
+              files = {
+                maxSize = 5000000, -- Increase this if necessary for large files.
+              },
+            },
+          },
+        },
         pyright = {},
       },
       inlay_hints = {
