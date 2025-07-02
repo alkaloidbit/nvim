@@ -51,7 +51,7 @@ return {
           settings = {
             intelephense = {
               stubs = {
-                "core",
+                "Core",
                 "wordpress",
                 "woocommerce",
                 "acf-pro",
