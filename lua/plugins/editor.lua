@@ -210,6 +210,7 @@ return {
   {
     "mickael-menu/zk-nvim",
     name = "zk",
+    tag = "v0.3.0",
     ft = "markdown",
     cmd = { "ZkNew", "ZkNotes", "ZkTags", "ZkMatch" },
     keys = {
