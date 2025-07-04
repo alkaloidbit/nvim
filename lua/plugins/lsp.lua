@@ -52,9 +52,15 @@ return {
             intelephense = {
               stubs = {
                 "Core",
+                "standard",
+                "pcre",
+                "date",
+                "json",
+                "mbstring",
                 "wordpress",
                 "woocommerce",
                 "acf-pro",
+                "wpunit",
                 "wordpress-globals",
                 "wp-cli",
                 "genesis",
