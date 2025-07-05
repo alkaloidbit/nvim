@@ -42,6 +42,14 @@ return {
   { "folke/twilight.nvim", opts = {} },
   -- nvim-bqf
   {
+    "folke/snacks.nvim",
+    opts = {
+      -- enable the snacks feature
+      words = { enabled = false },
+      image = { enabled = true },
+    },
+  },
+  {
     "kevinhwang91/nvim-bqf",
     ft = "qf",
     cmd = "BqfAutoToggle",
@@ -125,7 +133,7 @@ return {
       { "<Leader>ue", "<cmd>IBLToggle<CR>", desc = "Toggle indentation lines" },
     },
     config = function(_, opts)
-      dofile(vim.g.base46_cache .. "blankline")
+      -- dofile(vim.g.base46_cache .. "blankline")
       -- require("indent_blankline").setup(opts)
     end,
   },
@@ -144,7 +152,7 @@ return {
     opts = {
       options = {
         mode = "tabs", -- set to "tabs" to only show tabpages instead
-        separator_style = "slant",
+        separator_style = "thin",
         offsets = {
           {
             filetype = "neo-tree",
@@ -166,7 +174,7 @@ return {
       opts.defaults["<leader>sr"] = { name = "+Replace word" }
     end,
     config = function(_, opts)
-      dofile(vim.g.base46_cache .. "whichkey")
+      -- dofile(vim.g.base46_cache .. "whichkey")
       require("which-key").setup(opts)
     end,
   },
@@ -174,7 +182,7 @@ return {
   {
     "rcarriga/nvim-notify",
     config = function()
-      dofile(vim.g.base46_cache .. "notify")
+      -- dofile(vim.g.base46_cache .. "notify")
       -- require("nvim-notify").setup()
     end,
   },

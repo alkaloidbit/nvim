@@ -5,5 +5,8 @@
     "/home/fred-badlieutenant/.config/nvim/lua",
     "/home/fred-badlieutenant/.local/share/nvim/lazy/ui/nvchad_types/",
     "${3rd}/luv/library"
-  ]
+  ],
+    "diagnostics.disable": [
+        "unused-function"
+    ]
 }

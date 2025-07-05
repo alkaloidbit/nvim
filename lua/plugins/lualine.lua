@@ -1,7 +1,7 @@
 local fn = vim.fn
 
 local cwd = function()
-  local dir_name = "%#St_cwd#󰉖 " .. fn.fnamemodify(fn.getcwd(), ":t") .. " "
+  local dir_name = "%#St_NormalmodeText#󰉖 " .. fn.fnamemodify(fn.getcwd(), ":t") .. ""
   return (vim.o.columns > 85 and dir_name) or ""
 end
 
@@ -119,6 +119,7 @@ return {
       opts.options = {
         section_separators = { left = "", right = "" },
         component_separators = { left = "", right = "" },
+        disabled_filetypes = { statusline = { "dashboard", "alpha", "ministarter", "snacks_dashboard" } },
         theme = custom_nord,
       }
     end,

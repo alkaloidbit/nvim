@@ -382,7 +382,7 @@ return {
       }
     end,
     config = function(_, opts)
-      dofile(vim.g.base46_cache .. "telescope")
+      -- dofile(vim.g.base46_cache .. "telescope")
       require("telescope").setup(opts)
       require("telescope").load_extension("aerial")
       require("telescope").load_extension("fzf")

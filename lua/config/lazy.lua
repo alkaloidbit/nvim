@@ -1,8 +1,6 @@
 -- cloning lazy.nvim in ~/.local/share/nvim/lazy
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
-  require("core.bootstrap").gen_chadrc_template()
-  require("core.bootstrap").lazy(lazypath)
   -- bootstrap lazy.nvim
   -- stylua: ignore
   vim.fn.system({ "git", "clone", "--filter=blob:none", "https://github.com/folke/lazy.nvim.git", "--branch=stable", lazypath })
@@ -12,7 +10,7 @@ vim.opt.rtp:prepend(vim.env.LAZY or lazypath)
 require("lazy").setup({
   spec = {
     -- add LazyVim and import its plugins
-    { "alkaloidbit/LazyVim", import = "lazyvim.plugins" },
+    { "LazyVim/LazyVim", import = "lazyvim.plugins" },
     -- import any extras modules here
     -- { import = "lazyvim.plugins.extras.lang.typescript" },
     -- { import = "lazyvim.plugins.extras.lang.json" },
@@ -20,17 +18,6 @@ require("lazy").setup({
     -- { import = "lazyvim.plugins.extras.editor.aerial" },
     -- import/override with your plugins
     { import = "plugins" },
-    {
-      "alkaloidbit/base46",
-      branch = "v2.0",
-      build = function()
-        require("base46").load_all_highlights()
-      end,
-    },
-    {
-      "alkaloidbit/ui",
-      branch = "v2.0",
-    },
   },
   defaults = {
     -- By default, only LazyVim plugins will be lazy-loaded. Your custom plugins will load during startup.
@@ -41,7 +28,6 @@ require("lazy").setup({
     version = false, -- always use the latest git commit
     -- version = "*", -- try installing the latest stable version for plugins that support semver
   },
-  install = { colorscheme = { "nvchad" } },
   checker = { enabled = true }, -- automatically check for plugin updates
   performance = {
     rtp = {
@@ -59,10 +45,3 @@ require("lazy").setup({
     },
   },
 })
-dofile(vim.g.base46_cache .. "defaults")
-dofile(vim.g.base46_cache .. "syntax")
-dofile(vim.g.base46_cache .. "cmp")
-dofile(vim.g.base46_cache .. "lsp")
-dofile(vim.g.base46_cache .. "telescope")
-dofile(vim.g.base46_cache .. "git")
-dofile(vim.g.base46_cache .. "notify")
