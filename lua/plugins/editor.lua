@@ -276,6 +276,7 @@ return {
   },
   {
     "nvim-neo-tree/neo-tree.nvim",
+    enabled = false,
     opts = {
       default_component_configs = {
         icon = {
