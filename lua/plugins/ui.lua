@@ -1,18 +1,4 @@
 return {
-  {
-    "NvChad/nvim-colorizer.lua",
-    init = function()
-      require("core.utils").lazy_load("nvim-colorizer.lua")
-    end,
-    config = function(_, opts)
-      require("colorizer").setup(opts)
-
-      -- execute colorizer as soon as possible
-      vim.defer_fn(function()
-        require("colorizer").attach_to_buffer(0)
-      end, 0)
-    end,
-  },
   -- { "nvimdev/dashboard-nvim", enabled = false },
   {
     "folke/noice.nvim",
@@ -45,6 +31,70 @@ return {
     "folke/snacks.nvim",
     opts = {
       -- enable the snacks feature
+      picker = {
+        prompt = "   ",
+        enabled = true,
+        layout = {
+          -- The default layout for "telescopy" pickers, e.g. `files`, `commands`, ...
+          -- It will not override non-standard pickers, e.g. `explorer`, `lines`, ...
+          preset = function()
+            return vim.o.columns >= 120 and "telescope" or "vertical"
+          end,
+        },
+        layouts = {
+          telescope = {
+            -- Copy from https://github.com/folke/snacks.nvim/blob/main/docs/picker.md#telescope
+            reverse = false,
+            layout = {
+              box = "horizontal",
+              backdrop = false,
+              height = 0.9,
+              width = 0.9,
+              border = "none",
+              {
+                box = "vertical",
+                {
+                  win = "input",
+                  height = 1,
+                  border = "single",
+                  title = "{title} {live} {flags}",
+                  title_pos = "center",
+                },
+                {
+                  win = "list",
+                  border = "rounded",
+                  title = " Results ",
+                  title_pos = "center",
+                },
+              },
+              {
+                win = "preview",
+                title = "{preview:Preview}",
+                width = 0.51, -- Change the preview width
+                border = "rounded",
+                title_pos = "center",
+              },
+            },
+          },
+        },
+        sources = {
+          files = {},
+          explorer = {
+            layout = {
+              layout = {
+                position = "left",
+              },
+            },
+          },
+          lines = {
+            layout = {
+              preset = function()
+                return vim.o.columns >= 120 and "telescope" or "vertical"
+              end,
+            },
+          },
+        },
+      },
       words = { enabled = false },
       image = { enabled = true },
     },
@@ -155,7 +205,7 @@ return {
         separator_style = "thin",
         offsets = {
           {
-            filetype = "neo-tree",
+            filetype = "snacks_picker_list",
             text = "File Explorer",
             highlight = "NeoTreeOffset",
             text_align = "center",
