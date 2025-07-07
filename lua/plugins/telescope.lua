@@ -127,6 +127,7 @@ vim.api.nvim_create_autocmd("User", {
 return {
   {
     "nvim-telescope/telescope.nvim",
+    enabled = false,
     dependencies = {
       "stevearc/aerial.nvim",
       "nvim-treesitter/nvim-treesitter",
