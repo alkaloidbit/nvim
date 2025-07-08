@@ -176,6 +176,15 @@ return {
       words = { enabled = false },
       image = { enabled = true },
     },
+    keys = {
+      {
+        "<leader>fd",
+        function()
+          Snacks.picker.files({ cwd = vim.fn.expand("%:p:h") })
+        end,
+        desc = " Files in Current Buffer Dir ",
+      },
+    },
   },
   {
     "kevinhwang91/nvim-bqf",

@@ -36,13 +36,6 @@ keymap(
 
 keymap(
   "n",
-  "<leader>fd",
-  "<cmd>lua require('telescope.builtin').find_files({cwd=vim.fn.expand('%:p:h'), prompt_title=' Files in Current Buffer Dir '})<CR>",
-  { desc = "Files in current buf Dir", noremap = true, silent = true }
-)
-
-keymap(
-  "n",
   "<leader>fs",
   "<cmd>lua require('telescope').extensions.luasnip.luasnip{}<CR>",
   { desc = "Snippets for current ft", noremap = true, silent = true }
