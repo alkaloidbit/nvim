@@ -184,6 +184,13 @@ return {
         end,
         desc = " Files in Current Buffer Dir ",
       },
+      {
+        "<leader>fs",
+        function()
+          Snacks.picker.snippets()
+        end,
+        desc = "Snippets for current ft",
+      },
     },
   },
   {

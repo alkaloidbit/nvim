@@ -36,20 +36,11 @@ keymap(
 
 keymap(
   "n",
-  "<leader>fs",
-  "<cmd>lua require('telescope').extensions.luasnip.luasnip{}<CR>",
-  { desc = "Snippets for current ft", noremap = true, silent = true }
-)
-
-keymap(
-  "n",
   "<leader>gs",
   "<cmd>lua require('fr.telescope').my_git_status()<CR>",
   { desc = "Git Status", noremap = true, silent = true }
 )
 
-keymap("n", "<leader>ua", "<cmd>ColorizerToggle<CR>", { desc = "Toggle Colorizer", noremap = true, silent = false })
-keymap("n", "<leader>wf", "<cmd>FocusToggle<CR>", { desc = "Toggle Focus", noremap = true, silent = false })
 keymap(
   "n",
   "<leader>zz",
