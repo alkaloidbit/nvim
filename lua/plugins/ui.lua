@@ -275,13 +275,6 @@ return {
   },
   {
     "folke/which-key.nvim",
-    opts = function(_, opts)
-      opts.defaults["<leader>sr"] = { name = "+Replace word" }
-    end,
-    config = function(_, opts)
-      -- dofile(vim.g.base46_cache .. "whichkey")
-      require("which-key").setup(opts)
-    end,
   },
 
   {
