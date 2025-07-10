@@ -174,7 +174,13 @@ return {
         },
       },
       words = { enabled = false },
-      image = { enabled = true },
+      image = {
+        enabled = false,
+        doc = {
+          enabled = true,
+          inline = false,
+        },
+      },
     },
     keys = {
       {
