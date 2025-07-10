@@ -226,7 +226,7 @@ return {
       { "<leader>zb", "<Cmd>ZkBacklinks<CR>", desc = "Zk Backlinks" },
       { "<leader>zl", "<Cmd>ZkLinks<CR>", desc = "Zk Links" },
     },
-    opts = { picker = "telescope" },
+    opts = { picker = "snacks_picker" },
   },
 
   -- FZF

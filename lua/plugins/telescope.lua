@@ -127,7 +127,7 @@ vim.api.nvim_create_autocmd("User", {
 return {
   {
     "nvim-telescope/telescope.nvim",
-    enabled = true,
+    enabled = false,
     dependencies = {
       "stevearc/aerial.nvim",
       "nvim-treesitter/nvim-treesitter",
@@ -135,30 +135,30 @@ return {
       { "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
     },
     keys = {
-      {
-        "<leader>cg",
-        "<cmd>Telescope aerial<cr>",
-        desc = "Goto Symbol (Aerial)",
-      },
-      {
-        "<leader>uC",
-        "<cmd>Telescope themes<cr>",
-        desc = "Colorscheme themes",
-      },
-      { "<localleader>r", "<cmd>Telescope resume initial_mode=normal<CR>", desc = "Resume last" },
-      { "<localleader>R", "<cmd>Telescope pickers<CR>", desc = "Pickers" },
-      { "<localleader>n", plugin_directories, desc = "Plugins" },
-      { "<localleader>;", "<cmd>Telescope command_history<CR>", desc = "Command history" },
-      { "<localleader>h", "<cmd>Telescope highlights<CR>", desc = "Highlights" },
-      { "<localleader>:", "<cmd>Telescope commands<CR>", desc = "Commands" },
-      { "<localleader>/", "<cmd>Telescope search_history<CR>", desc = "Search history" },
-      {
-        "<leader>fp",
-        function()
-          require("telescope.builtin").find_files({ cwd = require("lazy.core.config").options.root })
-        end,
-        desc = "Find Plugin File",
-      },
+      -- {
+      --   "<leader>cg",
+      --   "<cmd>Telescope aerial<cr>",
+      --   desc = "Goto Symbol (Aerial)",
+      -- },
+      -- {
+      --   "<leader>uC",
+      --   "<cmd>Telescope themes<cr>",
+      --   desc = "Colorscheme themes",
+      -- },
+      -- { "<localleader>r", "<cmd>Telescope resume initial_mode=normal<CR>", desc = "Resume last" },
+      -- { "<localleader>R", "<cmd>Telescope pickers<CR>", desc = "Pickers" },
+      -- { "<localleader>n", plugin_directories, desc = "Plugins" },
+      -- { "<localleader>;", "<cmd>Telescope command_history<CR>", desc = "Command history" },
+      -- { "<localleader>h", "<cmd>Telescope highlights<CR>", desc = "Highlights" },
+      -- { "<localleader>:", "<cmd>Telescope commands<CR>", desc = "Commands" },
+      -- { "<localleader>/", "<cmd>Telescope search_history<CR>", desc = "Search history" },
+      -- {
+      --   "<leader>fp",
+      --   function()
+      --     require("telescope.builtin").find_files({ cwd = require("lazy.core.config").options.root })
+      --   end,
+      --   desc = "Find Plugin File",
+      -- },
       {
         "<localleader>z",
         function()
@@ -413,24 +413,24 @@ return {
       -- fg_bg("TelescopePromptPrefix", colors.red, colors.black2)
     end,
   },
-  {
-    "benfowler/telescope-luasnip.nvim",
-  },
+  -- {
+  --   "benfowler/telescope-luasnip.nvim",
+  -- },
 
   -- add telescope-fzf-native
-  {
-    "telescope.nvim",
-    dependencies = {
-      "nvim-telescope/telescope-fzf-native.nvim",
-      build = "make",
-      config = function()
-        require("telescope").load_extension("fzf")
-      end,
-    },
-  },
+  -- {
+  --   "telescope.nvim",
+  --   dependencies = {
+  --     "nvim-telescope/telescope-fzf-native.nvim",
+  --     build = "make",
+  --     config = function()
+  --       require("telescope").load_extension("fzf")
+  --     end,
+  --   },
+  -- },
 
-  {
-    "stevearc/aerial.nvim",
-    config = true,
-  },
+  -- {
+  --   "stevearc/aerial.nvim",
+  --   config = true,
+  -- },
 }

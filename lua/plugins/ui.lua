@@ -178,11 +178,25 @@ return {
     },
     keys = {
       {
+        "<leader>sP",
+        function()
+          Snacks.picker()
+        end,
+        desc = "Snacks picker",
+      },
+      {
         "<leader>fd",
         function()
           Snacks.picker.files({ cwd = vim.fn.expand("%:p:h") })
         end,
         desc = " Files in Current Buffer Dir ",
+      },
+      {
+        "<leader>fp",
+        function()
+          Snacks.picker.files({ cwd = require("lazy.core.config").options.root })
+        end,
+        desc = "Find Plugin File",
       },
       {
         "<leader>fs",
