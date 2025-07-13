@@ -174,6 +174,7 @@ return {
         },
       },
       words = { enabled = false },
+      statuscolumn = { enabled = true },
       image = {
         enabled = false,
         doc = {
@@ -195,7 +196,7 @@ return {
         function()
           Snacks.picker.files({ cwd = vim.fn.expand("%:p:h") })
         end,
-        desc = " Files in Current Buffer Dir ",
+        desc = "Files in Current Buffer Dir",
       },
       {
         "<leader>fp",
