@@ -11,13 +11,6 @@ local expr_opts = { noremap = true, expr = true, silent = true }
 keymap("i", "kj", "<Esc>", default_opts)
 keymap("t", "kj", "<C-\\><C-n>", default_opts)
 
-keymap("n", "msg", ":messages <CR>", default_opts)
-keymap("n", "msgg", ":messages clear<CR>", default_opts)
-
--- center result
-keymap("n", "msg", ":messages <CR>", default_opts)
-keymap("n", "msgg", ":messages clear<CR>", default_opts)
-
 -- Toggle fold or select option from popup menu
 ---@return string
 map("n", "<CR>", function()
@@ -27,26 +20,6 @@ end, { expr = true, desc = "Toggle Fold" })
 -- Focus the current fold by closing all others
 map("n", "<S-Return>", "zMzv", { remap = true, desc = "Focus Fold" })
 
-keymap(
-  "n",
-  "<leader>qr",
-  "<cmd>lua require('fr.telescope').reload()<CR>",
-  { desc = "Reload Neovim Lua Modules", noremap = true, silent = true }
-)
-
-keymap(
-  "n",
-  "<leader>gs",
-  "<cmd>lua require('fr.telescope').my_git_status()<CR>",
-  { desc = "Git Status", noremap = true, silent = true }
-)
-
-keymap(
-  "n",
-  "<leader>zz",
-  "<cmd>lua require('zen-mode').toggle({ window = { width = .85 } })<CR>",
-  { desc = "Zen Mode", noremap = true, silent = false }
-)
 -- Replace word under cursor in Buffer (case-sensitive)
 -- nmap <leader>srb :%s/<C-R><C-W>//gI<left><left><left>
 keymap(
