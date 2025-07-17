@@ -195,17 +195,6 @@ return {
     end,
   },
 
-  -- Spectre: search/replace in multiple files
-  {
-    "nvim-pack/nvim-spectre",
-    build = false,
-    cmd = "Spectre",
-    opts = { open_cmd = "noswapfile vnew" },
-    -- stylua: ignore
-    keys = {
-      { "<leader>srs", function() require("spectre").open() end, desc = "Replace in files (Spectre)" },
-    },
-  },
   -- Zk
   {
     "mickael-menu/zk-nvim",
