@@ -68,6 +68,13 @@ return {
               },
               files = {
                 maxSize = 5000000, -- Increase this if necessary for large files.
+                include = {
+                  "**/*.php",
+                  "vendor/**/*.php",
+                  "classes/**/*.php",
+                  "controllers/**/*.php",
+                  "modules/**/*.php",
+                },
               },
             },
           },
